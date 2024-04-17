@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/img_Item"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/img_radius"
+        android:src="@drawable/sample6"
+        android:layout_margin="20dp"
+        android:clipToOutline="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/text_Item_Title"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:text="프라다 복조리백"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:layout_marginStart="15dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        app:layout_constraintTop_toTopOf="@+id/img_Item"
+        app:layout_constraintStart_toEndOf="@+id/img_Item" />
+
+    <TextView
+        android:id="@+id/text_Item_Address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="수원시 영통구 원천동"
+        android:textSize="13.5dp"
+        android:textColor="#757575"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/text_Item_Title"
+        app:layout_constraintStart_toStartOf="@+id/text_Item_Title" />
+
+    <TextView
+        android:id="@+id/text_Item_Price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="50000"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/text_Item_Address"
+        app:layout_constraintStart_toStartOf="@+id/text_Item_Address" />
+
+    <TextView
+        android:id="@+id/text_Item_Like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="25"
+        android:textSize="14dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageView
+        android:id="@+id/img_Item1"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/heart"
+        android:layout_marginEnd="3dp"
+        app:layout_constraintEnd_toStartOf="@+id/text_Item_Like"
+        app:layout_constraintTop_toTopOf="@id/text_Item_Like"
+        app:layout_constraintBottom_toBottomOf="@id/text_Item_Like"/>
+
+    <TextView
+        android:id="@+id/text_Item_Chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="16"
+        android:textSize="14dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toStartOf="@id/img_Item1"
+        app:layout_constraintBottom_toBottomOf="@id/img_Item1"
+        app:layout_constraintTop_toTopOf="@id/img_Item1"/>
+
+    <ImageView
+        android:id="@+id/img_Item2"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/comment"
+        android:layout_marginEnd="3dp"
+        app:layout_constraintEnd_toStartOf="@+id/text_Item_Chat"
+        app:layout_constraintTop_toTopOf="@id/text_Item_Chat"
+        app:layout_constraintBottom_toBottomOf="@id/text_Item_Chat" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#B6B6B6"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/img_Item"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

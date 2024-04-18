@@ -1,11 +1,11 @@
-package com.example.appleproject.Adapter
+package com.example.appleproject.presentation
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.appleproject.Item
+import com.example.appleproject.data.Item
 import com.example.appleproject.databinding.RvItemBinding
 import java.text.DecimalFormat
 
@@ -35,7 +35,7 @@ class MainAdapter (val itemList: MutableList<Item>) : RecyclerView.Adapter<MainA
         holder.image.setImageResource(itemList[position].image)
         holder.title.text = itemList[position].title.toString()
         holder.address.text = itemList[position].address.toString()
-        holder.price.text = DecimalFormat("###,###").format(itemList[position].price).toString() + "원"
+        holder.price.text = DecimalFormat("###,###원").format(itemList[position].price).toString()
         holder.like.text = itemList[position].like.toString()
         holder.chat.text = itemList[position].chat.toString()
 

@@ -1,10 +1,9 @@
-package com.example.appleproject
+package com.example.appleproject.presentation
 
 
 import android.os.Bundle
-import android.widget.ToggleButton
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.example.appleproject.data.Item
 import com.example.appleproject.databinding.ActivityDetailBinding
 import com.google.android.material.snackbar.Snackbar
 import java.text.DecimalFormat
@@ -13,20 +12,25 @@ class DetailActivity : AppCompatActivity() {
 
     private val binding by lazy { ActivityDetailBinding.inflate(layoutInflater) }
 
+    companion object {
+        const val EXTRA_ITEM: String = "extra_item"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
 
-        val getItem = intent.getParcelableExtra<Item>("data")
-        if (getItem != null) {
-            binding.imgDetailMain.setImageResource(getItem.image)
-            binding.textDetailName.text = getItem.name
-            binding.textDetailAddress.text = getItem.address
-            binding.textDetailTitle.text = getItem.title
-            binding.textDetailExplain.text = getItem.explain
-            binding.textDetailPrice.text = DecimalFormat("###,###").format(getItem.price).toString() + "원"
-        }
+        val getItem = intent.getParcelableExtra<Item>(EXTRA_ITEM)
+
+        binding.imgDetailMain.setImageResource(getItem!!.image)
+        binding.textDetailName.text = getItem?.name
+        binding.textDetailAddress.text = getItem?.address
+        binding.textDetailTitle.text = getItem?.title
+        binding.textDetailExplain.text = getItem?.explain
+        binding.textDetailPrice.text =
+            DecimalFormat("###,###원").format(getItem?.price).toString()
+
 
         binding.imgDetailClose.setOnClickListener {
             finish()
